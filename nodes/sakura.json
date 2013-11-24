@@ -25,6 +25,7 @@
   "run_list": [
     "initialize",
     "initialize::users",
+    "initialize::ssh",
     "initialize::iptables",
     "yum",
     "yum::remi",
