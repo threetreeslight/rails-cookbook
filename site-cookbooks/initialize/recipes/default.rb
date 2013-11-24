@@ -19,4 +19,3 @@ user node[:initialize][:user] do
   action   [:create, :manage]
 end
 
-

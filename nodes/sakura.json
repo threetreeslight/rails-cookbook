@@ -1,0 +1,43 @@
+{
+  "initialize": {
+    "ssh_port": "2222"
+  },
+  "git": {
+    "version": "1.8.4.1",
+    "url": "https://git-core.googlecode.com/files/git-1.8.4.1.tar.gz"
+  },
+  "rbenv": {
+    "user": "webadmin",
+    "group": "webadmin"
+  },
+  "nodejs": {
+    "version": "0.10.22"
+  },
+  "nginx": {
+    "user": "webadmin",
+    "group": "webadmin"
+  },
+  "mysql": {
+    "server_root_password": "password",
+    "server_repl_password": "password",
+    "server_debian_password": "password"
+  },
+  "run_list": [
+    "initialize",
+    "initialize::users",
+    "initialize::iptables",
+    "yum",
+    "yum::remi",
+    "yum::epel",
+    "yum::repoforge",
+    "git::source",
+    "imagemagick",
+    "rbenv::default",
+    "rbenv::ruby_build",
+    "ruby",
+    "nodejs",
+    "nginx",
+    "nginx::http_geoip_module",
+    "mysql::server"
+  ]
+}
